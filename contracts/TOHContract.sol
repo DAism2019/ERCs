@@ -41,7 +41,7 @@ contract TOHContract is ERC721,Ownable {
     //白名单（代理） opensea使用
     address proxyRegistryAddress;
     //这个是用来处理接入EIP2569自定义接口
-    string private svg_template;
+    string private svg_template;  // 为比赛用，代币统统用一个图片表示
     mapping(uint256 => TokenInfo) public tokenInfos;     
     mapping(address => uint256) public withdrawLevel;     //已经领取的奖励等级
     uint256 public  token_id;       //发行的token数量

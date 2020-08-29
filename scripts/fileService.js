@@ -3,11 +3,11 @@
   Copyright (C),2018-2022
   Filename:  fileService.js
   Author: radarzhhua     Version:   1.0     Date: 2018.10.20
-  Description:   此JS是应用于Koa2框架上的常用文件操作封装,也可以直接用于node.js
+  Description:  此JS是node.js上的常用文件操作封装,也可以用于Koa等框架
                 所有方法均返回了promise，可适用于async/await
                 目前只封装了读txt文件，读json文件，写txt文件，写json文件，
                 其中写txt文件区分追加模式还是改写模式
-                需要增加readline功能
+                todo 需要增加readline功能
                 需要node.js 7.6以上
   email:radarzhhua@gmail.com
 *************************************************/

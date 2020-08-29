@@ -72,7 +72,7 @@ def viewSvg(tokenId):
     svg = TOH.functions.getTokenImageSvg(tokenId).call()
     print("svg_code:",svg)
 
-# setup()
+setup()
 # getInfo()
-viewSvg(1)
+# viewSvg(1)
 

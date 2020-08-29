@@ -28,8 +28,7 @@ decimals: public(uint256)
 balanceOf: public(HashMap[address, uint256])
 allowances: HashMap[address, HashMap[address, uint256]]
 total_supply: uint256
-#todo 目前参加比赛来源只有锻造合约，但是如果考虑奖励，则来源还有奖励合约，
-#这里必须修改，增加owner和奖励合约地址设置，改成中心化人为调转奖励合约
+
 minter:public(address)
 
 
@@ -124,7 +123,6 @@ def mint(_to: address, _value: uint256):
     @param _to The account that will receive the created tokens.
     @param _value The amount that will be created.
     """
-    #注意：增加owner和奖励合约地址时，这里也要修改
     assert msg.sender == self.minter
     assert _to != ZERO_ADDRESS
     self.total_supply += _value

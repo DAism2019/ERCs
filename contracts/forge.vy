@@ -29,7 +29,7 @@ def Setup(_ndao:address,_eth_supply:uint256,_ndao_supply:uint256):
     @dev constructor
     @param _ndao The address of  ndao token 
     @param _eth_supply The supply of eth
-    @param _ndao_supply The market capability of eth
+    @param _ndao_supply The market cap of eth 
     """
     assert self.ndao == ZERO_ADDRESS, "has setup"
     assert _ndao != ZERO_ADDRESS, "ZERO_ADDRESS"
@@ -45,9 +45,9 @@ def Setup(_ndao:address,_eth_supply:uint256,_ndao_supply:uint256):
 def _ethToNdaoInputPrice(eth_input_amount:uint256) -> uint256:
     assert eth_input_amount > 0, "ZERO_ETH_AMOUNT"
     assert self.eth_supply > 0 and self.ndao_supply > 0 ,"ZERO CPMM"
-    numerator:uint256 = self.ndao_supply * eth_input_amount 
+    numerator:uint256 = self.ndao_supply * eth_input_amount  
     denominator:uint256 = self.eth_supply - eth_input_amount
-    return numerator/denominator
+    return numerator/denominator    
 
 
 @external
@@ -78,7 +78,7 @@ def getOutputPrice(ndao_out_amount:uint256) -> uint256:
 def ForgeNdaoInput(min_ndao:uint256,deadline:uint256,recipient:address) -> uint256:
     """
     @dev Forge eth to ndao input
-    @param mit_ndao The minimum of output ndao 
+    @param min_ndao The minimum of output ndao 
     @param deadline Time after which this transaction can no longer be executed
     @param recipient The address that receives output ndao
     @return Amount of output ndao
@@ -87,7 +87,7 @@ def ForgeNdaoInput(min_ndao:uint256,deadline:uint256,recipient:address) -> uint2
     assert recipient != ZERO_ADDRESS, "ZERO_ADDRESS"
 
     out_ndao:uint256 = self._ethToNdaoInputPrice(msg.value)
-    assert out_ndao >= min_ndao, "Out ndao is less than minimum"
+    assert out_ndao >= min_ndao, "Out ndao is less than minimum" 
 
     self.eth_supply -= msg.value
     self.ndao_supply +=  out_ndao
