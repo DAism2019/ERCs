@@ -1,2 +1,2 @@
-# ERCs
-Application-level standards and conventions
+# A DAO born naturally
+It's a try.
