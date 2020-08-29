@@ -1,2 +1,2 @@
-# A DAO born naturally
+# A DAO been born naturally
 It's a try.
